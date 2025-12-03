@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil — Portfolio Mohamed (Inspired)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index-inspired.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index-inspired.html" class="nav-link active">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="veille.html" class="nav-link">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main class="minimal-main">
+    <!-- Hero minimal -->
+    <section class="minimal-hero fade-in">
+      <div class="minimal-container">
+        <h1 class="minimal-title">Mohamed — Développeur Web</h1>
+        <p class="minimal-subtitle">Je conçois des applications web performantes et des API robustes.</p>
+        <div class="minimal-meta">
+          <span>Symfony</span>
+          <span>PHP</span>
+          <span>API REST</span>
+          <span>MySQL</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets sélectionnés -->
+    <section class="minimal-section fade-in">
+      <div class="minimal-container">
+        <div class="minimal-head">
+          <h2>Projets sélectionnés</h2>
+          <a class="minimal-link" href="projets.html">Tous les projets →</a>
+        </div>
+        <div class="minimal-grid">
+          <a class="minimal-card" href="projets.html">
+            <div class="card-top">
+              <div class="pill">Symfony</div>
+              <div class="pill">API</div>
+            </div>
+            <h3>API Gestion Immo</h3>
+            <p>Back-end REST sécurisé avec authentification JWT et dashboard admin.</p>
+          </a>
+          <a class="minimal-card" href="projets.html">
+            <div class="card-top">
+              <div class="pill">Front</div>
+              <div class="pill">JS</div>
+            </div>
+            <h3>App Web Responsive</h3>
+            <p>Interface moderne, performance optimisée, UX fluide sur mobile & desktop.</p>
+          </a>
+          <a class="minimal-card" href="projets.html">
+            <div class="card-top">
+              <div class="pill">DevOps</div>
+              <div class="pill">CI/CD</div>
+            </div>
+            <h3>Automatisation</h3>
+            <p>Pipelines CI/CD, scripts d’intégration, déploiements reproductibles.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos rapide -->
+    <section class="minimal-section fade-in">
+      <div class="minimal-container">
+        <div class="minimal-split">
+          <div>
+            <h2>À propos</h2>
+            <p>Étudiant en BTS SIO (SLAM), je développe des solutions utiles et maintenables, avec un focus sur la sécurité et la performance.</p>
+          </div>
+          <div class="minimal-stack">
+            <div class="stack-item"><span>🔧</span> Backend — Symfony, PHP, API REST</div>
+            <div class="stack-item"><span>🎨</span> Frontend — HTML, CSS, JavaScript</div>
+            <div class="stack-item"><span>⚙️</span> DevOps — Git, Docker, Automatisation</div>
+            <div class="stack-item"><span>🔒</span> Sécurité — Auth, JWT, OWASP</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="minimal-cta fade-in">
+      <div class="minimal-container">
+        <h2>Travaillons ensemble</h2>
+        <p>Parlons de vos besoins et construisons une solution efficace.</p>
+        <div class="cta-actions">
+          <a href="projets.html" class="btn btn-primary">Voir mes projets</a>
+          <a href="contact.html" class="btn btn-secondary">Me contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mohamed — Portfolio BTS SIO</p>
+    <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

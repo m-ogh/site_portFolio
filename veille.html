@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille technologique - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="veille.html" class="nav-link active">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main>
+    <h2>Ma veille technologique</h2>
+    <p>Dans le cadre de mon BTS SIO, je réalise une veille sur les nouvelles technologies afin de rester informé des évolutions du secteur.</p>
+
+    <div class="card">
+      <h3>🌐 API et microservices</h3>
+      <p>Les architectures orientées microservices permettent de développer des applications modulaires et évolutives.</p>
+      <p><a href="https://www.redhat.com/fr/topics/microservices" target="_blank">Lire l'article</a></p>
+    </div>
+
+    <div class="card">
+      <h3>☁️ Cloud computing et DevOps</h3>
+      <p>Le cloud et les pratiques DevOps facilitent le déploiement continu et l’automatisation des infrastructures.</p>
+      <p><a href="https://azure.microsoft.com/fr-fr/resources/cloud-computing/" target="_blank">Lire l'article</a></p>
+    </div>
+
+    <div class="card">
+      <h3>🔒 Cybersécurité</h3>
+      <p>La sécurité des données est un enjeu majeur, avec l’augmentation des cyberattaques et des ransomwares.</p>
+      <p><a href="https://www.cisco.com/c/fr_fr/products/security/what-is-cybersecurity.html" target="_blank">Lire l'article</a></p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 Intelligence artificielle</h3>
+      <p>L’IA transforme les métiers de l’informatique, notamment avec l’automatisation et l’analyse prédictive.</p>
+      <p><a href="https://www.ibm.com/fr-fr/topics/artificial-intelligence" target="_blank">Lire l'article</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mohamed - Portfolio BTS SIO</p>
+    <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

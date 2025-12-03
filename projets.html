@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link active">Projets</a></li>
+        <li><a href="veille.html" class="nav-link">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main>
+      <section id="projects-page" class="projects-page fade-in">
+        <div class="projects-header">
+          <h2>Mes projets — BTS SIO (2 ans)</h2>
+          <p class="projects-sub">Sélection de projets réalisés durant ma formation : applications web, API, scripts d'automatisation et prototypes.</p>
+        </div>
+
+        <div class="projects-toolbar">
+          <div class="filters">
+            <button class="filter-btn active" data-filter="*">Tous</button>
+            <button class="filter-btn" data-filter="2024">2024</button>
+            <button class="filter-btn" data-filter="2025">2025</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="api">API</button>
+            <button class="filter-btn" data-filter="script">Script</button>
+          </div>
+          <div class="projects-stats" aria-hidden="true">6 projets</div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projet 1 -->
+          <article class="project-card" data-year="2024" data-type="web">
+            <div class="thumb" style="background-image:url('images/projet1.png')" role="img" aria-label="Projet Gestion de biens immobiliers"></div>
+            <div class="card-body">
+              <h3 class="project-title">Gestion de biens immobiliers</h3>
+              <p class="project-excerpt">Application Symfony avec tableau de bord, API REST et gestion des annonces.</p>
+              <div class="card-meta">
+                <span class="badge">Symfony</span>
+                <span class="badge">MySQL</span>
+                <a class="link" href="#" data-project="1">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 2 -->
+          <article class="project-card" data-year="2025" data-type="api">
+            <div class="thumb" style="background-image:url('images/projet2.png')" role="img" aria-label="API RH"></div>
+            <div class="card-body">
+              <h3 class="project-title">API RH</h3>
+              <p class="project-excerpt">API REST sécurisée pour la gestion des employés et des congés.</p>
+              <div class="card-meta">
+                <span class="badge">Node.js</span>
+                <span class="badge">JWT</span>
+                <a class="link" href="#" data-project="2">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 3 -->
+          <article class="project-card" data-year="2024" data-type="script">
+            <div class="thumb" style="background-image:url('images/projet3.png')" role="img" aria-label="Script d'automatisation"></div>
+            <div class="card-body">
+              <h3 class="project-title">Script d'automatisation</h3>
+              <p class="project-excerpt">Automatisation des sauvegardes et des rapports avec scripts PowerShell/Python.</p>
+              <div class="card-meta">
+                <span class="badge">PowerShell</span>
+                <span class="badge">Python</span>
+                <a class="link" href="#" data-project="3">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 4 - exemple -->
+          <article class="project-card" data-year="2025" data-type="web">
+            <div class="thumb" style="background-image:url('images/projet4.png')" role="img" aria-label="Site vitrine"></div>
+            <div class="card-body">
+              <h3 class="project-title">Site vitrine entreprise</h3>
+              <p class="project-excerpt">Site statique optimisé avec bonnes pratiques SEO et responsive.</p>
+              <div class="card-meta">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <a class="link" href="#" data-project="4">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ajouter d'autres projets ici -->
+        </div>
+
+        <!-- Modal projet (hidden par défaut) -->
+        <div id="projectModal" class="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+          <div class="modal-inner">
+            <button class="modal-close" aria-label="Fermer la fenêtre">✕</button>
+            <div class="modal-content">
+              <div class="modal-media" id="modalMedia"></div>
+              <div class="modal-info">
+                <h3 id="modalTitle">Titre du projet</h3>
+                <p id="modalDesc">Description complète du projet...</p>
+                <p id="modalTech">Technos : <span></span></p>
+                <p id="modalLink"><a href="#" target="_blank" rel="noopener">Voir sur GitHub</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Mohamed - Portfolio BTS SIO</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="veille.html" class="nav-link">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">💼 Disponible pour un stage</div>
+          <h1 class="hero-title">Développeur Web & API</h1>
+          <p class="hero-subtitle">Étudiant BTS SIO — spécialisé en <span class="hero-typed" data-phrases='["APIs sécurisées","applications web performantes","solutions évolutives"]'></span></p>
+          <p class="hero-description">
+            <span class="tech-chip">Symfony</span>
+            <span class="tech-chip">PHP</span>
+            <span class="tech-chip">API REST</span>
+            <span class="tech-chip">MySQL</span>
+            <span class="tech-chip">JavaScript</span>
+          </p>
+          
+          <div class="hero-cta">
+            <a href="projets.html" class="btn btn-primary">
+              <span class="btn-icon">→</span> Voir mes projets
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+              <span class="btn-icon">✉️</span> Me contacter
+            </a>
+          </div>
+
+          <div class="hero-social">
+            <a href="https://github.com/tonprofil" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:mohamed@example.com" class="social-link" aria-label="Email">
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card animate-float">
+            <div class="card-icon">💻</div>
+            <div class="card-content">
+              <h3>BTS SIO</h3>
+              <p>2ème année</p>
+              <p class="small">Formation en développement et infrastructure</p>
+            </div>
+          </div>
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section fade-in">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3 class="stat-number">6+</h3>
+          <p class="stat-label">Projets réalisés</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-number">2</h3>
+          <p class="stat-label">Années BTS SIO</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-number">10+</h3>
+          <p class="stat-label">Compétences techniques</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-number">100%</h3>
+          <p class="stat-label">Dédié et motivé</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section fade-in">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>À propos de moi</h2>
+          <p>👋 Je suis en 2ème année de BTS SIO option SLAM à l’école LE Rebours.</p>
+          <p>💻 Pendant ma formation, j’ai travaillé sur plusieurs projets qui m’ont permis de développer mes compétences en PHP/Symfony, JavaScript, HTML et CSS.</p>
+          <p>🔐 J’aime créer des applications utiles, sécurisées et faciles à maintenir, en cherchant toujours des solutions pratiques.</p>
+          
+          <div class="skills-highlight">
+            <div class="skill">
+              <span class="skill-icon">🔧</span>
+              <strong>Backend</strong> — Symfony, PHP, API REST, MySQL
+            </div>
+            <div class="skill">
+              <span class="skill-icon">🎨</span>
+              <strong>Frontend</strong> — HTML, CSS, JavaScript, Responsive Design
+            </div>
+            <div class="skill">
+              <span class="skill-icon">⚙️</span>
+              <strong>DevOps</strong> — Git, Docker, Scripts automatisés
+            </div>
+            <div class="skill">
+              <span class="skill-icon">🔒</span>
+              <strong>Sécurité</strong> — Authentification, JWT, OWASP
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="card-highlight">
+            <div class="highlight-icon">🚀</div>
+            <h3>Passion pour l'innovation</h3>
+            <p>Toujours en quête de nouvelles technologies et meilleures pratiques pour créer des applications modernes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BTS SIO Section -->
+    <section class="bts-sio-section fade-in">
+      <div class="bts-sio-container">
+        <div class="bts-sio-header">
+          <h2>Qu'est-ce que le BTS SIO&nbsp;?</h2>
+          <p class="bts-sio-lead">Diplôme Bac+2 orienté informatique, couvrant le développement et l'administration des systèmes et réseaux.</p>
+        </div>
+        <div class="bts-sio-divider"></div>
+        <div class="bts-sio-intro">
+          Le <strong>BTS SIO</strong> (Services Informatiques aux Organisations) forme des professionnels capables de concevoir des applications et d'assurer la gestion sécurisée des infrastructures.
+        </div>
+        <div class="bts-sio-options">
+          <article class="bts-sio-option">
+            <div class="option-icon" aria-hidden="true">🖧</div>
+            <div class="option-content">
+              <h3>Option SISR</h3>
+              <p class="option-subtitle">Solutions d’infrastructure, systèmes et réseaux</p>
+              <p>Installation, maintenance, sécurité et administration des environnements IT.</p>
+              <div class="option-group">
+                <div class="option-title">Métiers visés</div>
+                <ul class="option-list">
+                  <li>Administrateur systèmes et réseaux</li>
+                  <li>Informaticien support et déploiement</li>
+                  <li>Pilote d’exploitation</li>
+                  <li>Support systèmes et réseaux</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="bts-sio-option">
+            <div class="option-icon" aria-hidden="true">🧩</div>
+            <div class="option-content">
+              <h3>Option SLAM</h3>
+              <p class="option-subtitle">Solutions logicielles et applications métiers</p>
+              <p>De la rédaction des spécifications au développement et à l’intégration.</p>
+              <div class="option-group">
+                <div class="option-title">Métiers visés</div>
+                <ul class="option-list">
+                  <li>Développeur d’applications informatiques</li>
+                  <li>Développeur informatique</li>
+                  <li>Analyste d’applications ou d’études</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in">
+      <div class="cta-content">
+        <h2>Prêt à collaborer ?</h2>
+        <p>Consultez mes projets, découvrez mes compétences ou contactez-moi directement.</p>
+        <div class="cta-buttons">
+          <a href="projets.html" class="btn btn-primary">Explorer les projets</a>
+          <a href="contact.html" class="btn btn-secondary">Envoyer un message</a>
+          <a href="competences.html" class="btn btn-ghost">Voir compétences</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section fade-in">
+      <div class="features-container">
+        <h2>Pourquoi travailler avec moi ?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Rapide & Efficace</h3>
+            <p>Développement agile, livrables de qualité en délai court avec une attention particulière aux détails.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Sécurisé</h3>
+            <p>Code sécurisé, bonnes pratiques OWASP, authentification robuste et protection des données.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Scalable</h3>
+            <p>Architecture modulaire et évolutive, prête pour la croissance et les montées en charge.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Performance</h3>
+            <p>Optimisation complète : temps de chargement réduit, SEO-friendly, UX fluide.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Communication</h3>
+            <p>À l'écoute, transparent et proactif dans mes rapports et mise à jour d'avancement.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Moderne</h3>
+            <p>Technologies actuelles, frameworks éprouvés, toujours en veille des innovations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Timeline Section -->
+    <section class="timeline-section fade-in">
+      <div class="timeline-container">
+        <h2>Mon parcours BTS SIO</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2023-2024</div>
+              <h3>Bac pro Melec</h3>
+              <p>métiers de l’électricité et de ses environnements connectés</p>
+              <p>Mention Félicitation</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2024-2025</div>
+              <h3>1ére annnee de BTS SIO</h3>
+              <p>Bases du développement : HTML, CSS, JavaScript, .
+              
+
+              Initiation aux bases de données (SQL, MySQL).
+              Premiers projets web et applications simples.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2025</div>
+              <h3>2ème année - Spécialisation</h3>
+              <p>Approfondissement en DevOps, API sécurisées et recherche de stage en Île-de-France.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Final Section -->
+    <section class="final-section fade-in">
+      <div class="final-container">
+        <h2>Merci de la visite 👋</h2>
+        <p>Envie de discuter d’un stage ou d’un projet ? Contactez-moi et voyons comment je peux vous aider.</p>
+        <div class="final-actions">
+          <a href="contact.html" class="btn btn-primary">Me contacter</a>
+          <a href="projets.html" class="btn btn-secondary">Voir mes projets</a>
+          <a href="cv.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Télécharger mon CV</a>
+        </div>
+        <div class="final-links">
+          <a href="https://github.com/tonprofil" target="_blank" rel="noopener">GitHub</a>
+          <span>•</span>
+          <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener">LinkedIn</a>
+          <span>•</span>
+          <a href="mailto:mohamed@example.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+  <footer>
+    <p>&copy; 2025 Mohamed - Portfolio BTS SIO</p>
+    <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
