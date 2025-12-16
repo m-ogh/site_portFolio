@@ -36,6 +36,172 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  const introOverlay = document.getElementById('introOverlay');
+  if (introOverlay) {
+    body.classList.add('intro-active');
+
+    const introCanvas = document.getElementById('introMatrix');
+    let stopMatrixAnimation = null;
+    const introCountdown = document.getElementById('introCountdown');
+    const introTerminal = document.getElementById('introTerminal');
+    const introTerminalWrapper = introTerminal ? introTerminal.closest('.intro-terminal') : null;
+    const hudValues = document.querySelectorAll('.hud-value');
+    const introDuration = 3200;
+    const startTime = performance.now();
+    let countdownFrame;
+    let typingTimeouts = [];
+    const hudIntervals = [];
+
+    if (introCountdown) {
+      const updateCountdown = () => {
+        const elapsed = performance.now() - startTime;
+        const remaining = Math.max(introDuration - elapsed, 0) / 1000;
+        introCountdown.textContent = remaining.toFixed(1) + 's';
+        if (remaining > 0) {
+          countdownFrame = requestAnimationFrame(updateCountdown);
+        }
+      };
+      countdownFrame = requestAnimationFrame(updateCountdown);
+    }
+
+    if (hudValues.length) {
+      hudValues.forEach(el => {
+        const min = parseFloat(el.dataset.min) || 0;
+        const max = parseFloat(el.dataset.max) || min;
+        const unit = el.dataset.unit || '';
+        const unitSuffix = unit === '%' ? '%' : unit ? ' ' + unit : '';
+        const finalValue = el.dataset.final;
+        const formatter = () => {
+          const value = (Math.random() * (max - min) + min);
+          const isInt = Number.isInteger(min) && Number.isInteger(max);
+          const display = isInt ? Math.round(value) : value.toFixed(1);
+          el.textContent = display + unitSuffix;
+        };
+        formatter();
+        const interval = setInterval(formatter, 180 + Math.random() * 160);
+        hudIntervals.push({ interval, element: el, finalValue, unitSuffix });
+      });
+    }
+
+    if (introTerminal) {
+      const commands = [
+        'boot> wake_portfolio --env=public',
+        'boot> sync assets --channels=web,mobile',
+        'boot> verify pipeline --steps=ui,api',
+        'boot> diagnostics --all --verbose',
+        'boot> launch --status=ready'
+      ];
+      const typingSpeed = 32;
+      const commandGap = 140;
+      let cmdIndex = 0;
+      let charIndex = 0;
+      let bufferOutput = '';
+      let currentLine = '';
+
+      const scheduleTyping = (fn, delay) => {
+        const id = setTimeout(fn, delay);
+        typingTimeouts.push(id);
+      };
+
+      const typeCommand = () => {
+        if (cmdIndex >= commands.length) {
+          if (introTerminalWrapper) introTerminalWrapper.classList.add('complete');
+          return;
+        }
+        const command = commands[cmdIndex];
+        currentLine += command.charAt(charIndex);
+        introTerminal.textContent = bufferOutput + currentLine;
+        charIndex += 1;
+        if (charIndex < command.length) {
+          scheduleTyping(typeCommand, typingSpeed);
+        } else {
+          bufferOutput += command + '\n';
+          introTerminal.textContent = bufferOutput;
+          currentLine = '';
+          charIndex = 0;
+          cmdIndex += 1;
+          if (cmdIndex < commands.length) {
+            scheduleTyping(typeCommand, commandGap);
+          } else if (introTerminalWrapper) {
+            introTerminalWrapper.classList.add('complete');
+          }
+        }
+      };
+
+      scheduleTyping(typeCommand, 200);
+    }
+
+    if (introCanvas) {
+      const ctx = introCanvas.getContext('2d');
+      const chars = '01<>[]{}|/\\+=-';
+      const fontSize = 16;
+      let columns = 0;
+      let drops = [];
+
+      const resizeMatrix = () => {
+        introCanvas.width = window.innerWidth;
+        introCanvas.height = window.innerHeight;
+        columns = Math.floor(introCanvas.width / fontSize);
+        drops = Array(columns).fill(0);
+      };
+
+      resizeMatrix();
+      window.addEventListener('resize', resizeMatrix);
+
+      let matrixFrame;
+      const drawMatrix = () => {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+        ctx.fillRect(0, 0, introCanvas.width, introCanvas.height);
+        ctx.fillStyle = '#22d3ee';
+        ctx.font = `${fontSize}px "JetBrains Mono", Consolas, monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = chars.charAt(Math.floor(Math.random() * chars.length));
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          if (drops[i] * fontSize > introCanvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i] += 1;
+        }
+
+        matrixFrame = requestAnimationFrame(drawMatrix);
+      };
+
+      drawMatrix();
+
+      stopMatrixAnimation = () => {
+        if (matrixFrame) cancelAnimationFrame(matrixFrame);
+        window.removeEventListener('resize', resizeMatrix);
+      };
+    }
+
+    setTimeout(() => {
+      introOverlay.classList.add('intro-finished');
+      body.classList.remove('intro-active');
+      hudIntervals.forEach(({ element, finalValue, unitSuffix }) => {
+        if (!finalValue) return;
+        element.textContent = finalValue + (unitSuffix || '');
+      });
+    }, introDuration);
+
+    introOverlay.addEventListener('transitionend', () => {
+      if (!introOverlay.classList.contains('intro-finished')) return;
+      if (stopMatrixAnimation) {
+        stopMatrixAnimation();
+        stopMatrixAnimation = null;
+      }
+      if (countdownFrame) cancelAnimationFrame(countdownFrame);
+      if (typingTimeouts.length) {
+        typingTimeouts.forEach(clearTimeout);
+        typingTimeouts = [];
+      }
+      if (hudIntervals.length) {
+        hudIntervals.forEach(({ interval }) => clearInterval(interval));
+      }
+      introOverlay.style.display = 'none';
+    }, { once: true });
+  }
 });
 
 /* --------------------------------------------------
@@ -106,9 +272,11 @@ function updateActiveNavLink() {
 // Script pour le bouton CV (vérifie l'existence de l'élément)
 const downloadCVBtn = document.getElementById("downloadCV");
 if (downloadCVBtn) {
-  // Remplace "cv.pdf" par le vrai nom de ton fichier CV
-  downloadCVBtn.addEventListener("click", function() {
-    window.open("cv.pdf", "_blank");
+  const cvFilePath = "images/cv-portfolio.pdf";
+  downloadCVBtn.setAttribute("href", cvFilePath);
+  downloadCVBtn.setAttribute("download", "cv-portfolio.pdf");
+  downloadCVBtn.addEventListener("click", () => {
+    window.open(cvFilePath, "_blank");
   });
 }
 
@@ -234,63 +402,174 @@ if (projectGrid) {
   });
 }
 
-function openProjectModal(id) {
+async function openProjectModal(id) {
   if (!projectModal) return;
   // minimal dataset - expand as needed
   const data = {
     '1': {
-      title: 'Gestion de biens immobiliers',
-      desc: 'Application Symfony avec tableau de bord, API REST, authentification et gestion des annonces. Travail réalisé en binôme, tests et déploiement local.',
-      tech: 'Symfony · PHP · MySQL',
-      media: 'images/projet1.png',
-      link: 'https://github.com/tonprofil/projet-immobilier'
+      title: 'Anime-aura – Recherche d\'anime avec l\'API Jikan',
+      desc: 'Anime-aura est une application web développée dans le cadre d\'un projet scolaire. Elle permet aux utilisateurs de rechercher des animes en temps réel en s\'appuyant sur l\'API Jikan, qui fournit des données issues de MyAnimeList. Le site affiche des informations détaillées sur chaque anime : titre, synopsis, bande annonce, listes des personnages. L\'objectif est de proposer une interface simple, moderne et intuitive pour découvrir de nouveaux animes.',
+      tech: 'HTML5 / CSS3 · React.js · API Jikan (REST) · GitHub Pages',
+      media: ['images/anime-aura.png','images/anime-aura2.png','images/anime-aura3.png'],
+      link: 'https://github.com/m-ogh/site_api_anime'
     },
     '2': {
-      title: 'API RH',
-      desc: 'API REST sécurisée pour la gestion des employés et congés. Documentation OpenAPI et tests automatisés.',
-      tech: 'Node.js · Express · JWT',
-      media: 'images/projet2.png',
-      link: '#'
+      title: 'Pokémon Arena – Jeu de combat en Java',
+      desc: 'Pokémon Arena est un projet développé en Java qui simule un mini-jeu de combat inspiré de l’univers Pokémon. Au lancement, le joueur se voit proposer trois Pokémon choisis aléatoirement et doit en sélectionner un pour débuter l’aventure. Le jeu enchaîne ensuite sur des combats au tour par tour, où chaque Pokémon dispose de 4 attaques avec des effets et des dégâts différents. L’objectif est de vaincre l’adversaire en utilisant stratégie et gestion des points de vie. Ce projet met en avant la programmation orientée objet (POO), la gestion des classes, l’héritage et la logique de combat.',
+      tech: 'Java (POO) · Maven · IntelliJ IDEA',
+      media: ['images/pokemon-arena.png','images/pokemon-arena2.png','images/pokemon-arena3.png','images/pokemon-arena4.png','images/pokemon-arena4.mp4'],
+      link: 'https://github.com/m-ogh/PokemonArenaOUGH'
     },
     '3': {
-      title: 'Script d\'automatisation',
-      desc: 'Scripts PowerShell et Python pour automatiser sauvegardes et rapports. Scripts documentés et planifiés via tâches.',
-      tech: 'PowerShell · Python',
-      media: 'images/projet3.png',
-      link: '#'
+      title: 'Caribbean Digital – Site vitrine WordPress',
+      desc: 'Caribbean Digital est un site vitrine conçu avec WordPress pour une agence de marketing spécialisée dans la communication digitale et la stratégie en ligne. Le site met en avant les services proposés (SEO, campagnes publicitaires, gestion des réseaux sociaux, branding) à travers une interface moderne, responsive et optimisée. Il intègre un thème personnalisé, des plugins pour l’optimisation SEO et la gestion des formulaires de contact, ainsi qu’une mise en page claire et attractive.',
+      tech: 'WordPress (CMS) · Thème personnalisé (HTML/CSS)',
+      media: ['images/caribbean-digital.png','images/caribbean-digital-2.png','images/caribbean-digital-3.png'],
+      link: ''
     },
     '4': {
-      title: 'Site vitrine entreprise',
-      desc: 'Site statique responsive avec optimisation SEO, bonnes pratiques d\'accessibilité et performance.',
-      tech: 'HTML · CSS · JS',
-      media: 'images/projet4.png',
-      link: '#'
-    }
+      title: 'Khatiri Ramonage – Site vitrine WordPress',
+      desc: 'Dans le cadre de mon stage, j’ai conçu et réalisé un site vitrine pour un autoentrepreneur exerçant dans le domaine du ramonage de cheminées. L’objectif était de mettre en avant ses services (ramonage, entretien, conseils de sécurité) et de faciliter la prise de contact avec ses clients. Le site est responsive, optimisé et intègre un formulaire de contact simple et efficace. Ce projet m’a permis de travailler sur la personnalisation d’un thème WordPress, l’intégration de plugins adaptés, et la mise en place d’une structure claire et professionnelle pour un artisan indépendant.',
+      tech: 'WordPress (CMS) · Thème personnalisé (HTML/CSS) · Plugins SEO · Formulaire de contact · Elementor',
+      media: ['images/khatiri-ramonage1.png','images/khatiri-ramonage2.png','images/khatiri-ramonage3.png'],
+      link: ''    },
+    '5': {
+      title: 'ImmoTrack – Gestion immobilière',
+      desc: 'ImmoTrack est une application conçue pour les propriétaires et gestionnaires immobiliers afin de faciliter le suivi d\'un parc immobilier. Elle permet d\'ajouter, modifier et supprimer des biens avec leurs caractéristiques (surface, localisation, prix, statut), de suivre la disponibilité (loué, en vente, libre), de gérer les interactions avec les utilisateurs (agents, propriétaires), et d\'accéder à un tableau de bord regroupant les indicateurs clés (revenus, taux d\'occupation, nombre de biens). L\'objectif est de proposer un outil simple, propre et évolutif, capable de s\'adapter aux besoins futurs (contrats, notifications, maintenance, reporting).',
+      tech: 'Symfony · PHP · Java · MySQL',
+      media: ['images/immotrack1.png','images/immotrack2.png','images/immotrack3.png'],
+      link: ''    }
   };
 
   const item = data[id];
   if (!item) return;
 
   const modalMedia = document.getElementById('modalMedia');
+  const carouselTrack = document.getElementById('carouselTrack');
+  const carouselDots = document.getElementById('carouselDots');
+  const prevBtn = modalMedia ? modalMedia.querySelector('.prev') : null;
+  const nextBtn = modalMedia ? modalMedia.querySelector('.next') : null;
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc = document.getElementById('modalDesc');
   const modalTech = document.getElementById('modalTech');
   const modalLink = document.getElementById('modalLink');
 
-  if (modalMedia) modalMedia.style.backgroundImage = `url('${item.media}')`;
+  // Setup carousel médias (images/vidéos)
+  const candidateMedia = Array.isArray(item.media) ? item.media : [item.media];
+
+  async function buildMediaList(srcs) {
+    const list = [];
+    for (const src of srcs) {
+      if (typeof src !== 'string') continue;
+      const isVideo = /\.(mp4|webm)$/i.test(src);
+      if (isVideo) {
+        list.push({ type: 'video', src });
+        continue;
+      }
+      const ok = await new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = src;
+      });
+      if (ok) list.push({ type: 'image', src });
+    }
+    return list;
+  }
+
+  const mediaList = await buildMediaList(candidateMedia);
+  const finalMedia = mediaList.length ? mediaList : candidateMedia.slice(0, 1).map(src => ({ type: 'image', src }));
+
+  if (carouselTrack) {
+    carouselTrack.innerHTML = finalMedia.map((m, idx) => {
+      const active = idx === 0 ? ' active' : '';
+      if (m.type === 'video') {
+        return `<div class="carousel-slide${active}"><video src="${m.src}" controls playsinline preload="metadata"></video></div>`;
+      }
+      return `<div class="carousel-slide${active}" style="background-image:url('${m.src}')"></div>`;
+    }).join('');
+  }
+  if (carouselDots) {
+    carouselDots.innerHTML = finalMedia.map((_, idx) => `<button class="dot${idx===0?' active':''}" aria-label="Aller à l'image ${idx+1}" data-index="${idx}"></button>`).join('');
+    carouselDots.style.display = finalMedia.length > 1 ? '' : 'none';
+  }
+  if (prevBtn) prevBtn.style.display = finalMedia.length > 1 ? '' : 'none';
+  if (nextBtn) nextBtn.style.display = finalMedia.length > 1 ? '' : 'none';
+
+  let currentIndex = 0;
+  let touchStartX = null;
+  let touchEndX = null;
+  function updateCarousel(index) {
+    const slides = carouselTrack ? carouselTrack.querySelectorAll('.carousel-slide') : [];
+    const dots = carouselDots ? carouselDots.querySelectorAll('.dot') : [];
+    if (!slides.length) return;
+    currentIndex = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === currentIndex));
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+  if (prevBtn) prevBtn.onclick = () => updateCarousel(currentIndex - 1);
+  if (nextBtn) nextBtn.onclick = () => updateCarousel(currentIndex + 1);
+  if (carouselDots) carouselDots.onclick = (e) => {
+    const b = e.target.closest('.dot');
+    if (!b) return;
+    updateCarousel(parseInt(b.getAttribute('data-index'), 10));
+  };
+
+  // Keyboard navigation when modal is open
+  function handleKeydown(ev) {
+    if (projectModal.getAttribute('aria-hidden') === 'true') return;
+    if (ev.key === 'ArrowLeft') updateCarousel(currentIndex - 1);
+    if (ev.key === 'ArrowRight') updateCarousel(currentIndex + 1);
+    if (ev.key === 'Escape') closeProjectModal();
+  }
+  document.addEventListener('keydown', handleKeydown);
+  // Keep reference to remove later
+  projectModal._keydownHandler = handleKeydown;
+
+  // Swipe support for mobile
+  if (modalMedia) {
+    modalMedia.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    modalMedia.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      const dx = touchEndX - (touchStartX ?? touchEndX);
+      if (Math.abs(dx) > 30) {
+        if (dx < 0) updateCarousel(currentIndex + 1);
+        else updateCarousel(currentIndex - 1);
+      }
+      touchStartX = null; touchEndX = null;
+    }, { passive: true });
+  }
   if (modalTitle) modalTitle.textContent = item.title;
   if (modalDesc) modalDesc.textContent = item.desc;
   if (modalTech) modalTech.innerHTML = 'Technos : <strong>' + item.tech + '</strong>';
-  if (modalLink) modalLink.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener">Voir la source</a>`;
+  if (modalLink) {
+    if (item.link) {
+      modalLink.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener" class="github-link">🔗 Voir sur GitHub</a>`;
+      modalLink.style.display = '';
+    } else {
+      modalLink.innerHTML = '';
+      modalLink.style.display = 'none';
+    }
+  }
 
+  document.documentElement.classList.add('modal-open');
+  document.body.classList.add('modal-open');
   projectModal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeProjectModal() {
   if (!projectModal) return;
   projectModal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
+  document.documentElement.classList.remove('modal-open');
+  document.body.classList.remove('modal-open');
+  
+  // Remove key listener when closing
+  if (projectModal._keydownHandler) {
+    document.removeEventListener('keydown', projectModal._keydownHandler);
+    projectModal._keydownHandler = null;
+  }
 }
 
 if (modalClose) modalClose.addEventListener('click', closeProjectModal);

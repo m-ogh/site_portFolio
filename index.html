@@ -7,6 +7,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="intro-overlay" id="introOverlay" aria-hidden="true">
+    <canvas class="intro-matrix" id="introMatrix" aria-hidden="true"></canvas>
+    <div class="intro-orbit intro-orbit--one" aria-hidden="true"></div>
+    <div class="intro-orbit intro-orbit--two" aria-hidden="true"></div>
+    <div class="intro-panel">
+      <div class="intro-terminal" aria-hidden="true">
+        <pre id="introTerminal"></pre>
+      </div>
+      <div class="intro-header">BOOT SEQUENCE // PORTFOLIO</div>
+      <div class="intro-hud" aria-hidden="true">
+        <div class="hud-item">
+          <span class="hud-label">LATENCY</span>
+          <span class="hud-value" data-min="12" data-max="28" data-unit="ms" data-final="14">14ms</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">BUILD</span>
+          <span class="hud-value" data-min="96" data-max="100" data-unit="%" data-final="100">100%</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">STATUS</span>
+          <span class="hud-value" data-min="42" data-max="84" data-unit="tasks" data-final="72">72 tasks</span>
+        </div>
+      </div>
+      <div class="intro-body">
+        <p class="intro-line">&gt; Initialisation du profil...</p>
+        <p class="intro-line delay-1">[OK] Chargement des projets</p>
+        <p class="intro-line delay-2">[OK] Connexion GitHub &amp; LinkedIn</p>
+        <p class="intro-line delay-3">[OK] Préchargement des compétences</p>
+        <p class="intro-line delay-4">[OK] Vérification des badges</p>
+        <p class="intro-line delay-5">[OK] Activation du mode présentation</p>
+      </div>
+      <div class="intro-progress"><span></span></div>
+      <div class="intro-footer">
+        <span class="intro-tag">BOOT v1.4.7</span>
+        <span class="intro-countdown" id="introCountdown">3.0s</span>
+      </div>
+    </div>
+  </div>
   <!-- Navbar Professionnelle -->
   <nav class="navbar">
     <div class="navbar-container">
@@ -27,6 +65,7 @@
         <li><a href="index.html" class="nav-link active">Accueil</a></li>
         <li><a href="competences.html" class="nav-link">Compétences</a></li>
         <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="tableau-synthese.html" class="nav-link">Tableau synthèse</a></li>
         <li><a href="veille.html" class="nav-link">Veille</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
@@ -43,13 +82,13 @@
     <section class="hero fade-in">
       <div class="hero-content">
         <div class="hero-text">
-          <div class="hero-badge">💼 Disponible pour un stage</div>
-          <h1 class="hero-title">Développeur Web & API</h1>
-          <p class="hero-subtitle">Étudiant BTS SIO — spécialisé en <span class="hero-typed" data-phrases='["APIs sécurisées","applications web performantes","solutions évolutives"]'></span></p>
+          <div class="hero-badge">💼 portfolio BTS SIO</div>
+          <h1 class="hero-title">Oughlis Mohamed</h1>
+          <p class="hero-subtitle">Étudiant en BTS SIO -<span class="hero-typed" data-phrases='["Services Informatiques aux Organisations"]'></span></p>
           <p class="hero-description">
             <span class="tech-chip">Symfony</span>
             <span class="tech-chip">PHP</span>
-            <span class="tech-chip">API REST</span>
+            <span class="tech-chip">HTML</span>
             <span class="tech-chip">MySQL</span>
             <span class="tech-chip">JavaScript</span>
           </p>
@@ -64,14 +103,11 @@
           </div>
 
           <div class="hero-social">
-            <a href="https://github.com/tonprofil" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <a href="https://github.com/m-ogh" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
               <span>GitHub</span>
             </a>
-            <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/mohamed-oughlis-182b87302/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
               <span>LinkedIn</span>
-            </a>
-            <a href="mailto:mohamed@example.com" class="social-link" aria-label="Email">
-              <span>Email</span>
             </a>
           </div>
         </div>
@@ -97,7 +133,7 @@
     <section class="stats-section fade-in">
       <div class="stats-grid">
         <div class="stat-card">
-          <h3 class="stat-number">6+</h3>
+          <h3 class="stat-number">5</h3>
           <p class="stat-label">Projets réalisés</p>
         </div>
         <div class="stat-card">
@@ -120,26 +156,20 @@
       <div class="about-content">
         <div class="about-text">
           <h2>À propos de moi</h2>
-          <p>👋 Je suis en 2ème année de BTS SIO option SLAM à l’école LE Rebours.</p>
-          <p>💻 Pendant ma formation, j’ai travaillé sur plusieurs projets qui m’ont permis de développer mes compétences en PHP/Symfony, JavaScript, HTML et CSS.</p>
-          <p>🔐 J’aime créer des applications utiles, sécurisées et faciles à maintenir, en cherchant toujours des solutions pratiques.</p>
+          <p>Je m’appelle Mohamed Oughlis, étudiant en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SLAM. Passionné par le développement et les technologies web, je poursuis actuellement ma formation et prévois de continuer en Licence Informatique l’année prochaine afin de renforcer mes compétences et élargir mes perspectives professionnelles.</p>
           
           <div class="skills-highlight">
             <div class="skill">
               <span class="skill-icon">🔧</span>
-              <strong>Backend</strong> — Symfony, PHP, API REST, MySQL
+              <strong>Backend</strong> — Java, PHP, Symfony, MySql, C++
             </div>
             <div class="skill">
               <span class="skill-icon">🎨</span>
-              <strong>Frontend</strong> — HTML, CSS, JavaScript, Responsive Design
+              <strong>Frontend</strong> — HTML, CSS, JavaScript
             </div>
             <div class="skill">
               <span class="skill-icon">⚙️</span>
-              <strong>DevOps</strong> — Git, Docker, Scripts automatisés
-            </div>
-            <div class="skill">
-              <span class="skill-icon">🔒</span>
-              <strong>Sécurité</strong> — Authentification, JWT, OWASP
+              <strong>DevOps</strong> — Git, Docker
             </div>
           </div>
         </div>
@@ -202,91 +232,42 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section fade-in">
-      <div class="cta-content">
-        <h2>Prêt à collaborer ?</h2>
-        <p>Consultez mes projets, découvrez mes compétences ou contactez-moi directement.</p>
-        <div class="cta-buttons">
-          <a href="projets.html" class="btn btn-primary">Explorer les projets</a>
-          <a href="contact.html" class="btn btn-secondary">Envoyer un message</a>
-          <a href="competences.html" class="btn btn-ghost">Voir compétences</a>
-        </div>
-      </div>
-    </section>
+    <!-- CTA Section removed per user request -->
 
-    <!-- Features Section -->
-    <section class="features-section fade-in">
-      <div class="features-container">
-        <h2>Pourquoi travailler avec moi ?</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Rapide & Efficace</h3>
-            <p>Développement agile, livrables de qualité en délai court avec une attention particulière aux détails.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Sécurisé</h3>
-            <p>Code sécurisé, bonnes pratiques OWASP, authentification robuste et protection des données.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <h3>Scalable</h3>
-            <p>Architecture modulaire et évolutive, prête pour la croissance et les montées en charge.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Performance</h3>
-            <p>Optimisation complète : temps de chargement réduit, SEO-friendly, UX fluide.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🤝</div>
-            <h3>Communication</h3>
-            <p>À l'écoute, transparent et proactif dans mes rapports et mise à jour d'avancement.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3>Moderne</h3>
-            <p>Technologies actuelles, frameworks éprouvés, toujours en veille des innovations.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Features Section removed per request -->
 
 
     <!-- Timeline Section -->
     <section class="timeline-section fade-in">
       <div class="timeline-container">
         <h2>Mon parcours BTS SIO</h2>
+        <h3>Parcours Scolaire</h3>
+        <p class="timeline-lead">Suivre mon cursus scolaire, mes différentes formations et mon parcours professionnel.</p>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-year">2023-2024</div>
-              <h3>Bac pro Melec</h3>
-              <p>métiers de l’électricité et de ses environnements connectés</p>
-              <p>Mention Félicitation</p>
+              <h3>Bac pro Métiers de l’Électricité et de ses Environnements Connectés</h3>
+              <p>J’ai obtenu un Bac Pro MELEC, où j’ai développé des compétences techniques en électricité et environnements connectés. Mention Félicitation.</p>
             </div>
           </div>
+
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-year">2024-2025</div>
-              <h3>1ére annnee de BTS SIO</h3>
-              <p>Bases du développement : HTML, CSS, JavaScript, .
-              
-
-              Initiation aux bases de données (SQL, MySQL).
-              Premiers projets web et applications simples.</p>
+              <h3>BTS Services Informatiques aux Organisations</h3>
+              <p>Choix spécialités : Option SLAM (Solutions logicielles et Applications Métiers).</p>
             </div>
           </div>
+
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <div class="timeline-year">2025</div>
+              <div class="timeline-year">2025-2026</div>
               <h3>2ème année - Spécialisation</h3>
-              <p>Approfondissement en DevOps, API sécurisées et recherche de stage en Île-de-France.</p>
+              <p>BTS SIO finalisation en cours ...</p>
             </div>
           </div>
         </div>
@@ -303,14 +284,12 @@
         <div class="final-actions">
           <a href="contact.html" class="btn btn-primary">Me contacter</a>
           <a href="projets.html" class="btn btn-secondary">Voir mes projets</a>
-          <a href="cv.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Télécharger mon CV</a>
+          <a href="images/cv-portfolio.pdf" class="btn btn-ghost" download="cv-portfolio.pdf"> mon CV</a>
         </div>
         <div class="final-links">
-          <a href="https://github.com/tonprofil" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/m-ogh" target="_blank" rel="noopener">GitHub</a>
           <span>•</span>
-          <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener">LinkedIn</a>
-          <span>•</span>
-          <a href="mailto:mohamed@example.com">Email</a>
+          <a href="https://www.linkedin.com/in/mohamed-oughlis-182b87302/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </section>
