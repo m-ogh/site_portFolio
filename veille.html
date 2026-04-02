@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille technologique - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="tableau-synthese.html" class="nav-link">Tableau synthèse</a></li>
+        <li><a href="veille.html" class="nav-link active">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main>
+    <!-- Bloc double: sujet principal à droite + bloc court à côté -->
+    <section class="veille-duo fade-in">
+      <div class="duo-grid">
+        <article class="duo-card duo-primary">
+          <h2 class="duo-title">Le phishing</h2>
+          <p class="duo-desc">Le phishing est une cyberattaque qui utilise des e-mails, SMS ou appels frauduleux pour pousser une victime à divulguer des informations sensibles (mots de passe, données bancaires…). Les attaquants imitent des organismes de confiance pour tromper l’utilisateur.</p>
+        </article>
+        <article class="duo-card duo-secondary">
+          <h3 class="duo-title">🛠️ Méthodologie & Outils</h3>
+          <p class="duo-desc"><strong>Veille technologique</strong><br><br><strong>Flux :</strong> Google Alerts, Perplexity<br><strong>Sources :</strong> Blogs spécialisés (Azure), Sites d'actualité tech (TechCrunch)<br><strong>Fréquence :</strong> Quotidienne — je consulte mes flux et alertes quotidiennement pour rester à jour.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tableau: Opportunités vs Défis -->
+    <section class="veille-table fade-in">
+      <div class="table-container">
+        <article class="table-column table-opportunities">
+          <h3 class="table-title">✅ Opportunités & Avantages</h3>
+          <ul class="table-list">
+            <li>
+              <strong>Sensibilisation accrue :</strong> Le phishing est un sujet central pour les campagnes de prévention. Les organismes comme Cybermalveillance.gouv.fr proposent des fiches réflexes et des supports pédagogiques pour aider les utilisateurs à reconnaître les signaux d'alerte.
+            </li>
+            <li>
+              <strong>Renforcement des pratiques de sécurité :</strong> Les entreprises mettent en place des solutions robustes comme l'authentification multifactorielle (MFA), le filtrage avancé des e-mails et la supervision des systèmes.
+            </li>
+            <li>
+              <strong>Innovation technologique :</strong> L'IA peut aussi être utilisée du côté défensif pour détecter les anomalies dans les communications et bloquer les tentatives de phishing.
+            </li>
+            <li>
+              <strong>Pertinence professionnelle :</strong> Le phishing étant à l'origine de plus de 80 % des cyberattaques, suivre ce sujet montre ta capacité à anticiper les menaces les plus fréquentes et à proposer des solutions adaptées.
+            </li>
+          </ul>
+        </article>
+
+        <article class="table-column table-challenges">
+          <h3 class="table-title">⚠️ Défis & Limites</h3>
+          <ul class="table-list">
+            <li>
+              <strong>Sophistication croissante des attaques :</strong> Les cybercriminels exploitent désormais l'IA pour rédiger des e-mails crédibles, créer des deepfakes vocaux/vidéo et lancer des attaques par QR code ("quishing").
+            </li>
+            <li>
+              <strong>Ciblage renforcé :</strong> Les attaques de spear phishing et de whaling visent directement les collaborateurs ou dirigeants avec des messages personnalisés.
+            </li>
+            <li>
+              <strong>Difficulté de détection :</strong> Les faux sites et e-mails imitent parfaitement les logos et communications officielles, rendant la fraude difficile à repérer.
+            </li>
+            <li>
+              <strong>Impact majeur :</strong> Les entreprises subissent des pertes financières, des compromissions de comptes sensibles et une atteinte à la confiance des clients.
+            </li>
+            <li>
+              <strong>Charge de sensibilisation :</strong> La vigilance humaine reste indispensable, mais elle demande une formation continue et régulière.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cartes: Sources suivies -->
+    <section class="veille-sources-section fade-in">
+      <h3 class="sources-title">Sources suivies</h3>
+      <div class="sources-grid">
+        <article class="source-card">
+          <h4 class="source-card-title">🏛️ Sites officiels & institutions</h4>
+          <ul class="source-list">
+            <li><strong>Cybermalveillance.gouv.fr</strong> — fiches réflexes et conseils pratiques contre le phishing</li>
+            <li><strong>Fortinet CyberGlossary</strong> — définitions et bonnes pratiques en cybersécurité</li>
+            <li><strong>CERT-FR</strong> — alertes et bulletins de sécurité</li>
+          </ul>
+        </article>
+
+        <article class="source-card">
+          <h4 class="source-card-title">📰 Blogs & presse spécialisée</h4>
+          <ul class="source-list">
+            <li><strong>Proselis</strong> — actualités sur la recrudescence des attaques</li>
+            <li><strong>Mail-Secure</strong> — analyses sur les attaques sophistiquées grâce à l'IA</li>
+            <li><strong>Journal du Net – Cybersécurité</strong> — enjeux de sensibilisation et mises à jour logicielles</li>
+          </ul>
+        </article>
+
+        <article class="source-card">
+          <h4 class="source-card-title">𝕏 Comptes Twitter (X)</h4>
+          <ul class="source-list">
+            <li><strong>@Cybermalveillance</strong> — prévention et alertes en France</li>
+            <li><strong>@CERT_FR</strong> — veille officielle sur les menaces</li>
+            <li><strong>@Mandiant</strong> — analyses internationales sur les cyberattaques</li>
+          </ul>
+        </article>
+
+        <article class="source-card">
+          <h4 class="source-card-title">▶️ Chaînes YouTube</h4>
+          <ul class="source-list">
+            <li><strong>IT-Connect (Florian Burnel)</strong> — tutoriels et sensibilisation en cybersécurité (FR)</li>
+            <li><strong>The PC Security Channel (TPSC)</strong> — tests et explications sur les menaces (EN)</li>
+            <li><strong>Cybersécurité Craw</strong> — vulgarisation des risques et bonnes pratiques (FR)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Articles: Grille 3x2 -->
+    <section class="veille-articles fade-in">
+      <h3 class="articles-title">Articles & Ressources</h3>
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="article-image" style="background-image:url('https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?w=500&h=300&fit=crop');"></div>
+          <h4 class="article-heading">Phishing en 2025 : Attaques toujours plus sophistiquées grâce à l'IA</h4>
+          <p class="article-excerpt">Découvrez comment l'IA transforme les tactiques de phishing et les nouvelles menaces qui en résultent.</p>
+          <a href="https://mail-secure.fr/blog/phishing/phishing-en-2025-des-attaques-toujours-plus-sophistiquees-grace-a-lia/" target="_blank" rel="noopener" class="article-btn">Lire l'article →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-image" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop');"></div>
+          <h4 class="article-heading">Sensibilisation à la cybersécurité : Phishing et mises à jour</h4>
+          <p class="article-excerpt">Les enjeux majeurs de la sensibilisation en 2025 pour les entreprises et utilisateurs.</p>
+          <a href="https://www.journaldunet.com/cybersecurite/1545139-sensibilisation-a-la-cybersecurite-le-phishing-et-les-mises-a-jour-logicielles-restent-les-principaux-enjeux/" target="_blank" rel="noopener" class="article-btn">Lire l'article →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-image" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop');"></div>
+          <h4 class="article-heading">Phishing – Cybersecurity Glossary</h4>
+          <p class="article-excerpt">Définition complète du phishing et des mécanismes d'attaque selon Fortinet.</p>
+          <a href="https://www.fortinet.com/fr/resources/cyberglossary/phishing" target="_blank" rel="noopener" class="article-btn">Lire l'article →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-image" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=300&fit=crop');"></div>
+          <h4 class="article-heading">Phishing : Une recrudescence inquiétante à la rentrée 2025</h4>
+          <p class="article-excerpt">Analyse des tendances de phishing et des stratégies employées par les cybercriminels.</p>
+          <a href="https://www.proselis.com/phishing-une-recrudescence-inquietante-a-la-rentree-2025/" target="_blank" rel="noopener" class="article-btn">Lire l'article →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-image" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=300&fit=crop');"></div>
+          <h4 class="article-heading">Arnaques plus nombreuses : NordVPN renforce votre boîte email</h4>
+          <p class="article-excerpt">Solutions de protection contre les arnaques par phishing et renforcement de la sécurité email.</p>
+          <a href="https://www.degrouptest.com/actualite/face-aux-arnaques-plus-nombreuses-et-plus-elaborees-nordvpn-renforce-votre-boite-email" target="_blank" rel="noopener" class="article-btn">Lire l'article →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-image" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop');"></div>
+          <h4 class="article-heading">À compléter</h4>
+          <p class="article-excerpt">Ajoute un 6e article en remplaçant ce lien et ce titre par les tiens.</p>
+          <a href="#" target="_blank" rel="noopener" class="article-btn">Lire l'article →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mohamed - Portfolio BTS SIO</p>
+    <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

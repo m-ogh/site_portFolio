@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de synthèse - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="tableau-synthese.html" class="nav-link active">Tableau synthèse</a></li>
+        <li><a href="veille.html" class="nav-link">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main>
+    <section class="tableau-hero fade-in">
+      <div class="tableau-container">
+        <div class="tableau-header">
+          <h1 class="tableau-title">Tableau de synthèse</h1>
+          <p class="tableau-subtitle">Consultez mon tableau de synthèse</p>
+        </div>
+        
+        <div class="tableau-card card">
+          <p class="tableau-description">
+            Ce document présente l'ensemble de mes compétences BTS SIO, mes réalisations professionnelles et les périodes associées.
+          </p>
+          
+          <div class="tableau-actions">
+            <a href="images/8%20-%20BTS%20SIO%20-%20Annexe%208-1%20-%20Tableau%20de%20synth%C3%A8se%20-%20Epreuve%20E4%20-%20BTS%20SIO%202024%20(1)leBONNNN.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+              <span class="btn-icon">👁️</span>
+              Ouvrir le PDF
+            </a>
+            <a href="images/8%20-%20BTS%20SIO%20-%20Annexe%208-1%20-%20Tableau%20de%20synth%C3%A8se%20-%20Epreuve%20E4%20-%20BTS%20SIO%202024%20(1)leBONNNN.pdf" download class="btn btn-secondary">
+              <span class="btn-icon">📥</span>
+              Télécharger
+            </a>
+          </div>
+        </div>
+
+        <div class="tableau-info">
+          <div class="info-block">
+            <h3>📊 Contenu du tableau</h3>
+            <p>Le tableau synthétise mes compétences techniques, mes projets réalisés, mes stages et mon parcours de formation BTS SIO avec les dates précises et les technologies utilisées.</p>
+          </div>
+
+          <div class="info-block">
+            <h3>✅ À jour</h3>
+            <p>Ce document est mis à jour régulièrement avec mes dernières réalisations et les nouvelles compétences acquises.</p>
+          </div>
+
+          <div class="info-block">
+            <h3>📄 Format</h3>
+            <p>Le document est disponible en PDF, optimisé pour l'impression et la consultation numérique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mohamed - Portfolio BTS SIO</p>
+    <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

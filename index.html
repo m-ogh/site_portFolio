@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="intro-overlay" id="introOverlay" aria-hidden="true">
+    <canvas class="intro-matrix" id="introMatrix" aria-hidden="true"></canvas>
+    <div class="intro-orbit intro-orbit--one" aria-hidden="true"></div>
+    <div class="intro-orbit intro-orbit--two" aria-hidden="true"></div>
+    <div class="intro-panel">
+      <div class="intro-terminal" aria-hidden="true">
+        <pre id="introTerminal"></pre>
+      </div>
+      <div class="intro-header">BOOT SEQUENCE // PORTFOLIO</div>
+      <div class="intro-hud" aria-hidden="true">
+        <div class="hud-item">
+          <span class="hud-label">LATENCY</span>
+          <span class="hud-value" data-min="12" data-max="28" data-unit="ms" data-final="14">14ms</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">BUILD</span>
+          <span class="hud-value" data-min="96" data-max="100" data-unit="%" data-final="100">100%</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">STATUS</span>
+          <span class="hud-value" data-min="42" data-max="84" data-unit="tasks" data-final="72">72 tasks</span>
+        </div>
+      </div>
+      <div class="intro-body">
+        <p class="intro-line">&gt; Initialisation du profil...</p>
+        <p class="intro-line delay-1">[OK] Chargement des projets</p>
+        <p class="intro-line delay-2">[OK] Connexion GitHub &amp; LinkedIn</p>
+        <p class="intro-line delay-3">[OK] Préchargement des compétences</p>
+        <p class="intro-line delay-4">[OK] Vérification des badges</p>
+        <p class="intro-line delay-5">[OK] Activation du mode présentation</p>
+      </div>
+      <div class="intro-progress"><span></span></div>
+      <div class="intro-footer">
+        <span class="intro-tag">BOOT v1.4.7</span>
+        <span class="intro-countdown" id="introCountdown">3.0s</span>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="tableau-synthese.html" class="nav-link">Tableau synthèse</a></li>
+        <li><a href="veille.html" class="nav-link">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">💼 portfolio BTS SIO</div>
+          <h1 class="hero-title">Oughlis Mohamed</h1>
+          <p class="hero-subtitle">Étudiant en BTS SIO -<span class="hero-typed" data-phrases='["Services Informatiques aux Organisations"]'></span></p>
+          <p class="hero-description">
+            <span class="tech-chip">Symfony</span>
+            <span class="tech-chip">PHP</span>
+            <span class="tech-chip">HTML</span>
+            <span class="tech-chip">MySQL</span>
+            <span class="tech-chip">JavaScript</span>
+          </p>
+          
+          <div class="hero-cta">
+            <a href="projets.html" class="btn btn-primary">
+              <span class="btn-icon">→</span> Voir mes projets
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+              <span class="btn-icon">✉️</span> Me contacter
+            </a>
+          </div>
+
+          <div class="hero-social">
+            <a href="https://github.com/m-ogh" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/mohamed-oughlis-182b87302/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card animate-float">
+            <div class="card-icon">💻</div>
+            <div class="card-content">
+              <h3>BTS SIO</h3>
+              <p>2ème année</p>
+              <p class="small">Formation en développement et infrastructure</p>
+            </div>
+          </div>
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section fade-in">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3 class="stat-number">5</h3>
+          <p class="stat-label">Projets réalisés</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-number">2</h3>
+          <p class="stat-label">Années BTS SIO</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-number">10+</h3>
+          <p class="stat-label">Compétences techniques</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="stat-number">100%</h3>
+          <p class="stat-label">Dédié et motivé</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section fade-in">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>À propos de moi</h2>
+          <p>Je m’appelle Mohamed Oughlis, étudiant en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SLAM. Passionné par le développement et les technologies web, je poursuis actuellement ma formation et prévois de continuer en Licence Informatique l’année prochaine afin de renforcer mes compétences et élargir mes perspectives professionnelles.</p>
+          
+          <div class="skills-highlight">
+            <div class="skill">
+              <span class="skill-icon">🔧</span>
+              <strong>Backend</strong> — Java, PHP, Symfony, MySql, C++
+            </div>
+            <div class="skill">
+              <span class="skill-icon">🎨</span>
+              <strong>Frontend</strong> — HTML, CSS, JavaScript
+            </div>
+            <div class="skill">
+              <span class="skill-icon">⚙️</span>
+              <strong>DevOps</strong> — Git, Docker
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="card-highlight">
+            <div class="highlight-icon">🚀</div>
+            <h3>Passion pour l'innovation</h3>
+            <p>Toujours en quête de nouvelles technologies et meilleures pratiques pour créer des applications modernes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BTS SIO Section -->
+    <section class="bts-sio-section fade-in">
+      <div class="bts-sio-container">
+        <div class="bts-sio-header">
+          <h2>Qu'est-ce que le BTS SIO&nbsp;?</h2>
+          <p class="bts-sio-lead">Diplôme Bac+2 orienté informatique, couvrant le développement et l'administration des systèmes et réseaux.</p>
+        </div>
+        <div class="bts-sio-divider"></div>
+        <div class="bts-sio-intro">
+          Le <strong>BTS SIO</strong> (Services Informatiques aux Organisations) forme des professionnels capables de concevoir des applications et d'assurer la gestion sécurisée des infrastructures.
+        </div>
+        <div class="bts-sio-options">
+          <article class="bts-sio-option">
+            <div class="option-icon" aria-hidden="true">🖧</div>
+            <div class="option-content">
+              <h3>Option SISR</h3>
+              <p class="option-subtitle">Solutions d’infrastructure, systèmes et réseaux</p>
+              <p>Installation, maintenance, sécurité et administration des environnements IT.</p>
+              <div class="option-group">
+                <div class="option-title">Métiers visés</div>
+                <ul class="option-list">
+                  <li>Administrateur systèmes et réseaux</li>
+                  <li>Informaticien support et déploiement</li>
+                  <li>Pilote d’exploitation</li>
+                  <li>Support systèmes et réseaux</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="bts-sio-option">
+            <div class="option-icon" aria-hidden="true">🧩</div>
+            <div class="option-content">
+              <h3>Option SLAM</h3>
+              <p class="option-subtitle">Solutions logicielles et applications métiers</p>
+              <p>De la rédaction des spécifications au développement et à l’intégration.</p>
+              <div class="option-group">
+                <div class="option-title">Métiers visés</div>
+                <ul class="option-list">
+                  <li>Développeur d’applications informatiques</li>
+                  <li>Développeur informatique</li>
+                  <li>Analyste d’applications ou d’études</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section removed per user request -->
+
+    <!-- Features Section removed per request -->
+
+
+    <!-- Timeline Section -->
+    <section class="timeline-section fade-in">
+      <div class="timeline-container">
+        <h2>Mon parcours BTS SIO</h2>
+        <h3>Parcours Scolaire</h3>
+        <p class="timeline-lead">Suivre mon cursus scolaire, mes différentes formations et mon parcours professionnel.</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2023-2024</div>
+              <h3>Bac pro Métiers de l’Électricité et de ses Environnements Connectés</h3>
+              <p>J’ai obtenu un Bac Pro MELEC, où j’ai développé des compétences techniques en électricité et environnements connectés. Mention Félicitation.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2024-2025</div>
+              <h3>BTS Services Informatiques aux Organisations</h3>
+              <p>Choix spécialités : Option SLAM (Solutions logicielles et Applications Métiers).</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2026-2027</div>
+              <h3>Licence Générale en Informatique</h3>
+              <p>Poursuite de mes études avec une licence générale en informatique pour approfondir mes compétences en développement, infrastructure et gestion de projets informatiques.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Final Section -->
+    <section class="final-section fade-in">
+      <div class="final-container">
+
+        <p>Envie de discuter d’un stage ou d’un projet ? Contactez-moi et voyons comment je peux vous aider.</p>
+        <div class="final-actions">
+          <a href="contact.html" class="btn btn-primary">Me contacter</a>
+          <a href="projets.html" class="btn btn-secondary">Voir mes projets</a>
+          <a href="images/Copie%20de%20CV%20professionnel%20gris%20simple%20(1).pdf" class="btn btn-ghost" download="Copie de CV professionnel gris simple (1).pdf"> mon CV</a>
+        </div>
+        <div class="final-links">
+          <a href="https://github.com/m-ogh" target="_blank" rel="noopener">GitHub</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/mohamed-oughlis-182b87302/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+  <footer>
+    <p>&copy; 2026 Mohamed - Portfolio BTS SIO</p>
+    <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

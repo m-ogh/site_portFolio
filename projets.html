@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link active">Projets</a></li>
+        <li><a href="tableau-synthese.html" class="nav-link">Tableau synthèse</a></li>
+        <li><a href="veille.html" class="nav-link">Veille</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main>
+      <section id="projects-page" class="projects-page fade-in">
+        <div class="projects-header">
+          <h2>Mes projets — BTS SIO (2 ans)</h2>
+          <p class="projects-sub">Sélection de projets réalisés durant ma formation : applications web, API, scripts d'automatisation et prototypes.</p>
+        </div>
+
+        <div class="projects-toolbar">
+          <div class="projects-stats" aria-hidden="true">6 projets</div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projet 1 : Anime-aura -->
+          <article class="project-card" data-year="2025" data-type="web">
+            <div class="thumb" style="background-image:url('images/anime-aura.png')" role="img" aria-label="Anime-aura – Recherche d'anime avec l'API Jikan"></div>
+            <div class="card-body">
+              <h3 class="project-title">Anime-aura – Recherche d'anime avec l'API Jikan</h3>
+              <p class="project-excerpt">Application web permettant de rechercher rapidement des animes grâce à l'API Jikan</p>
+              <div class="card-meta">
+                <span class="badge">React.js</span>
+                <span class="badge">API Jikan</span>
+                <a class="link" href="#" data-project="1">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 2 -->
+          <article class="project-card" data-year="2025" data-type="game">
+            <div class="thumb" style="background-image:url('images/pokemon-arena.png')" role="img" aria-label="Pokémon Arena – Jeu de combat en Java"></div>
+            <div class="card-body">
+              <h3 class="project-title">Pokémon Arena – Jeu de combat en Java</h3>
+              <p class="project-excerpt">Jeu de combat Pokémon en Java où l’on choisit un Pokémon aléatoire parmi trois avant d’affronter ses adversaires.</p>
+              <div class="card-meta">
+                <span class="badge">Java</span>
+                <span class="badge">Maven</span>
+                <a class="link" href="#" data-project="2">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 3 -->
+          <article class="project-card" data-year="2024" data-type="web">
+            <div class="thumb" style="background-image:url('images/caribbean-digital.png')" role="img" aria-label="Caribbean Digital – Site vitrine WordPress"></div>
+            <div class="card-body">
+              <h3 class="project-title">Caribbean Digital – Site vitrine WordPress</h3>
+              <p class="project-excerpt">Site vitrine professionnel développé sous WordPress pour l'agence Caribbean Digital.</p>
+              <div class="card-meta">
+                <span class="badge">WordPress</span>
+                <span class="badge">Thème personnalisé</span>
+                <a class="link" href="#" data-project="3">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 4 - exemple -->
+          <article class="project-card" data-year="2025" data-type="web">
+            <div class="thumb-gallery" role="img" aria-label="Khatiri Ramonage – Site vitrine WordPress">
+              <img src="images/khatiri-ramonage2.png" alt="Page d'accueil du site Khatiri Ramonage" loading="lazy">
+              <img src="images/khatiri-ramonage1.png" alt="Section services du site Khatiri Ramonage" loading="lazy">
+              <img src="images/khatiri-ramonage3.png" alt="Formulaire de contact du site Khatiri Ramonage" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="project-title">Khatiri Ramonage – Site vitrine WordPress pour un autoentrepreneur</h3>
+              <p class="project-excerpt">Site vitrine professionnel développé sous WordPress pour un autoentrepreneur spécialisé dans le ramonage de cheminées.</p>
+              <div class="card-meta">
+                <span class="badge">WordPress</span>
+                <span class="badge">Thème personnalisé</span>
+                <span class="badge">Plugins SEO</span>
+                <a class="link" href="#" data-project="4">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 5 -->
+          <article class="project-card" data-year="2025" data-type="web">
+            <div class="thumb" style="background-image:url('images/immotrack1.png')" role="img" aria-label="ImmoTrack – Gestion immobilière"></div>
+            <div class="card-body">
+              <h3 class="project-title">ImmoTrack – Gestion immobilière</h3>
+              <p class="project-excerpt">Application de gestion immobilière permettant de centraliser les informations sur les biens, leurs caractéristiques et leur statut, avec une interface simple et évolutive.</p>
+              <div class="card-meta">
+                <span class="badge">Symfony</span>
+                <span class="badge">PHP</span>
+                <span class="badge">MySQL</span>
+                <a class="link" href="#" data-project="5">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 6 : HELP 94 -->
+          <article class="project-card" data-year="2025" data-type="web">
+            <div class="thumb" style="background-image:url('images/Capture%20d%27écran%202026-03-28%20152134.png')" role="img" aria-label="HELP 94 — Conception d'un site web d'aide à la personne"></div>
+            <div class="card-body">
+              <h3 class="project-title">HELP 94 — Conception d'un site web d'aide à la personne</h3>
+              <p class="project-excerpt">Site WordPress pour une professeure relançant son activité d'aide à domicile destinée aux seniors, intégrant un système de réservation en ligne et une interface accessible.</p>
+              <div class="card-meta">
+                <span class="badge">WordPress</span>
+                <span class="badge">Accessibilité</span>
+                <span class="badge">Réservation</span>
+                <a class="link" href="#" data-project="6">Voir le projet →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ajouter d'autres projets ici -->
+        </div>
+
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Mohamed - Portfolio BTS SIO</p>
+      <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </footer>
+
+    <!-- Modal projet (hors du flux principal pour éviter les décalages) -->
+    <div id="projectModal" class="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+      <div class="modal-inner">
+        <button class="modal-close" aria-label="Fermer la fenêtre">✕</button>
+        <div class="modal-content">
+          <div class="modal-media" id="modalMedia">
+            <button class="carousel-btn prev" aria-label="Image précédente">‹</button>
+            <div class="carousel-track" id="carouselTrack"></div>
+            <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            <div class="carousel-dots" id="carouselDots"></div>
+          </div>
+          <div class="modal-info">
+            <h3 id="modalTitle">Titre du projet</h3>
+            <p id="modalDesc">Description complète du projet...</p>
+            <p id="modalTech">Technos : <span></span></p>
+            <p id="modalLink"><a href="#" target="_blank" rel="noopener">Voir sur GitHub</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

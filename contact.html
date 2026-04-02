@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Professionnelle -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Mohamed</span>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+        <li><a href="projets.html" class="nav-link">Projets</a></li>
+        <li><a href="tableau-synthese.html" class="nav-link">Tableau synthèse</a></li>
+        <li><a href="veille.html" class="nav-link">Veille</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-nav-primary">Collaborer</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"></div>
+  </nav>
+
+  <main id="contact" class="contact-section fade-in">
+    <div class="contact-container contact-grid">
+      <div class="contact-hero">
+        <h1>Contactez-moi</h1>
+        <p class="lead">Disponible pour stages, alternance ou missions freelance. Envoyez-moi un message et je reviens rapidement.</p>
+
+        <div class="contact-details card">
+          <div class="detail-row">
+            <div class="detail-icon">✉️</div>
+            <div>
+              <div class="detail-label">Email</div>
+              <a href="mailto:mohammedtoys23@gmail.com">mohammedtoys23@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <div class="detail-icon">📞</div>
+            <div>
+              <div class="detail-label">Téléphone</div>
+              <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <div class="detail-icon">🔗</div>
+            <div>
+              <div class="detail-label">Réseaux</div>
+              <a href="https://github.com/m-ogh" target="_blank" rel="noopener">GitHub</a> ·
+              <a href="https://www.linkedin.com/in/mohamed-oughlis-182b87302/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-outline" href="images/Copie%20de%20CV%20professionnel%20gris%20simple%20(1).pdf" download="Copie de CV professionnel gris simple (1).pdf" id="downloadCV">📄 Télécharger mon CV</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="contact-form-wrapper card">
+        <h2>Envoyer un message</h2>
+        <form id="contactForm" class="contact-form" action="https://formsubmit.co/mohammedtoys23@gmail.com" method="POST" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Prénom Nom" required>
+            </div>
+            <div class="form-field">
+              <label for="email">E‑mail</label>
+              <input type="email" id="email" name="email" placeholder="adresse@exemple.com" required>
+            </div>
+            <div class="form-field full">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Sujet du message (ex: Stage)" required>
+            </div>
+            <div class="form-field full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet ou demande..." required></textarea>
+            </div>
+          </div>
+
+          <!-- Champs cachés pour FormSubmit -->
+          <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="/success.html">
+
+          <div id="formMessage" class="form-message" aria-live="polite" hidden></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mohamed - Portfolio BTS SIO</p>
+    <button id="toggleDarkMode" class="btn-theme" aria-label="Mode sombre">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>

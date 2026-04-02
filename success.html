@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message envoyé - Portfolio Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .success-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .success-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 60px 40px;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: bounce 1s ease-out;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .success-card h1 {
+      font-size: 2rem;
+      color: #0f172a;
+      margin: 20px 0 10px;
+      font-weight: 800;
+    }
+
+    .success-card p {
+      font-size: 1.05rem;
+      color: #475569;
+      margin: 0 0 30px;
+      line-height: 1.6;
+    }
+
+    .success-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .success-actions .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-success-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+    }
+
+    .btn-success-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-success-secondary {
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 2px solid #e2e8f0;
+    }
+
+    .btn-success-secondary:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+
+    .success-details {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .success-details h3 {
+      color: #0f172a;
+      margin: 0 0 16px;
+      font-size: 1.1rem;
+    }
+
+    .success-details ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .success-details li {
+      margin: 8px 0;
+    }
+
+    /* Dark mode */
+    body.dark-mode .success-card {
+      background: #1f2937;
+    }
+
+    body.dark-mode .success-card h1 {
+      color: #e2e8f0;
+    }
+
+    body.dark-mode .success-card p {
+      color: #cbd5e1;
+    }
+
+    body.dark-mode .success-details {
+      background: #374151;
+    }
+
+    body.dark-mode .success-details h3 {
+      color: #f1f5f9;
+    }
+
+    body.dark-mode .success-details ul {
+      color: #cbd5e1;
+    }
+
+    body.dark-mode .btn-success-secondary {
+      background: #374151;
+      color: #f1f5f9;
+      border-color: #4b5563;
+    }
+
+    body.dark-mode .btn-success-secondary:hover {
+      background: #4b5563;
+    }
+
+    body.dark-mode .success-container {
+      background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-card">
+      <div class="success-icon">✅</div>
+      <h1>Message envoyé !</h1>
+      <p>Merci pour votre message. Je l'ai bien reçu et je vous répondrai dans les plus brefs délais.</p>
+
+      <div class="success-details">
+        <h3>📧 Prochaines étapes</h3>
+        <ul>
+          <li>✓ Votre message a été reçu</li>
+          <li>✓ Je vous répondrai par email sous 24h</li>
+          <li>✓ Vérifiez votre dossier spam si nécessaire</li>
+        </ul>
+      </div>
+
+      <div class="success-actions">
+        <a href="index.html" class="btn btn-success-primary">
+          <span>🏠</span>
+          Retour à l'accueil
+        </a>
+        <a href="projets.html" class="btn btn-success-secondary">
+          <span>📂</span>
+          Voir mes projets
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Appliquer le mode sombre si sauvegardé
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+</body>
+</html>
